@@ -6,11 +6,11 @@
 #    By: rmonney <marvin@42lausanne.ch>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 15:29:04 by rmonney           #+#    #+#              #
-#    Updated: 2021/11/04 15:50:58 by rmonney          ###   ########.fr        #
+#    Updated: 2021/11/10 16:40:57 by rmonney          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= XXXXXXXXXXXXXXXXX
+SRCS	= ft_printf.c utils1.c utils2.c
 
 OBJS	= ${SRCS:.c=.o}
 
