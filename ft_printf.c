@@ -6,7 +6,7 @@
 /*   By: rmonney <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:03:21 by rmonney           #+#    #+#             */
-/*   Updated: 2021/11/10 18:11:38 by rmonney          ###   ########.fr       */
+/*   Updated: 2021/11/10 18:27:12 by rmonney          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -72,8 +72,8 @@ int	flag_handler(char flag, long int spec)
 		count += which_putnbr((int)spec, flag);
 	if (flag == 'x' || flag == 'X')
 		count += which_hexa((int)spec, flag);
-	if (flag != 'c' || flag != 's' || flag != 'p' || flag != 'd' || flag != 'i'
-		|| flag != 'u' || flag != 'x' || flag != 'X' || flag != 0)
+	if (flag != 'c' && flag != 's' && flag != 'p' && flag != 'd' && flag != 'i'
+		&& flag != 'u' && flag != 'x' && flag != 'X' && flag != 0)
 		count = -1;
 	return (count);
 }

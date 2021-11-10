@@ -6,7 +6,7 @@
 /*   By: rmonney <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 15:25:17 by rmonney           #+#    #+#             */
-/*   Updated: 2021/11/10 18:12:08 by rmonney          ###   ########.fr       */
+/*   Updated: 2021/11/10 18:20:47 by rmonney          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -34,6 +34,7 @@ int	hexaprint_maj(int n)
 	int	count;
 
 	count = 0;
+	n = 0;
 	return (count);
 }
 
@@ -42,5 +43,6 @@ int	hexaprint_min(int n)
 	int	count;
 
 	count = 0;
+	n = 0;
 	return (count);
 }
