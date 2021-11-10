@@ -6,20 +6,15 @@
 /*   By: rmonney <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:56:08 by rmonney           #+#    #+#             */
-/*   Updated: 2021/11/10 18:11:53 by rmonney          ###   ########.fr       */
+/*   Updated: 2021/11/10 18:45:34 by rmonney          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
 int	ft_putchar(char c)
 {
-	if (c)
-	{
-		write(1, &c, 1);
-		return (1);
-	}
-	else
-		return (0);
+	write(1, &c, 1);
+	return (1);
 }
 
 int	ft_putstr(char *s)
@@ -37,7 +32,10 @@ int	ft_putstr(char *s)
 		return (i);
 	}
 	else
-		return (0);
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 }
 
 int	which_putnbr(int n, char flag)

@@ -6,11 +6,11 @@
 /*   By: rmonney <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:57:35 by rmonney           #+#    #+#             */
-/*   Updated: 2021/11/10 18:04:57 by rmonney          ###   ########.fr       */
+/*   Updated: 2021/11/10 18:44:27 by rmonney          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <unistd.h>
 # include <stdarg.h>
