@@ -6,10 +6,10 @@
 /*   By: rmonney <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 15:25:17 by rmonney           #+#    #+#             */
-/*   Updated: 2021/11/10 17:28:49 by rmonney          ###   ########.fr       */
+/*   Updated: 2021/11/10 18:12:08 by rmonney          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ptrprint(void *ptr)
 {
