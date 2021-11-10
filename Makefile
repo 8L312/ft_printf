@@ -6,7 +6,7 @@
 #    By: rmonney <marvin@42lausanne.ch>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 15:29:04 by rmonney           #+#    #+#              #
-#    Updated: 2021/11/10 16:40:57 by rmonney          ###   ########.fr        #
+#    Updated: 2021/11/10 16:46:33 by rmonney          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ ${NAME}:	${OBJS}
 			${CC} ${FLAG} -c $< -o ${<:.c=.o}
 
 clean:
-			${RM}${OBJS}
+			${RM} ${OBJS}
 
 fclean:		clean
 			${RM} ${NAME}
