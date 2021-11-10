@@ -6,7 +6,7 @@
 /*   By: rmonney <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:03:21 by rmonney           #+#    #+#             */
-/*   Updated: 2021/11/10 16:35:11 by rmonney          ###   ########.fr       */
+/*   Updated: 2021/11/10 18:03:52 by rmonney          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "printf.h"
@@ -57,6 +57,27 @@ int	printcounter(const char *str, int i)
 	return (count);
 }
 
+int	flag_handler(char flag, long int spec)
+{
+	int	count;
+
+	count = 0;
+	if (flag == 'c')
+		count += ft_putchar((int)spec);
+	if (flag == 's')
+		count += ft_putstr((char *)spec);
+	if (flag == 'p')
+		count += ptrprint((void *)spec);
+	if (flag == 'd' || flag == 'i' || flag == 'u')
+		count += which_putnbr((int)spec, flag);
+	if (flag == 'x' || flag == 'X')
+		count += which_hexa((int)spec, flag);
+	if (flag != 'c' || flag != 's' || flag != 'p' || flag != 'd' || flag != 'i'
+		|| flag != 'u' || flag != 'x' || flag != 'X' || flag != 0)
+		count = -1;
+	return (count);
+}
+
 int	ft_printf(const char *str, ...)
 {
 	int		i;
@@ -67,21 +88,12 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	i = 0;
 	count = 0;
-	while (str[i] != '\0')
+	while (str[i] != '\0' && count != -1)
 	{
 		flag = whatflag(str, i);
 		count += printcounter(str, i);
 		i = printer(str, i);
-		if (flag == 'c')
-			count += ft_putchar(va_arg(args, int));
-		if (flag == 's')
-			count += ft_putstr(va_arg(args, char *));
-		if (flag == 'p')
-			count += ptrprint(va_arg(args, void *));
-		if (flag == 'd' || flag == 'i' || flag == 'u')
-			count += which_putnbr(va_arg(args, int), flag);
-		if (flag == 'x' || flag == 'X')
-			count += hexaprint(va_arg(args, int), flag);
+		count += flag_handler(flag, va_arg(args, long int));
 	}
 	va_end(args);
 	return (count);

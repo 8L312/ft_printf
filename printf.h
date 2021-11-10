@@ -6,7 +6,7 @@
 /*   By: rmonney <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:57:35 by rmonney           #+#    #+#             */
-/*   Updated: 2021/11/10 15:30:36 by rmonney          ###   ########.fr       */
+/*   Updated: 2021/11/10 18:04:57 by rmonney          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PRINTF_H
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 
+int		flaghandler(char flag, long int spec);
 char	whatflag(const char *str, int i);
 int		printer(const char *str, int i);
 int		printcounter(const char *str, int i);
@@ -26,6 +27,8 @@ int		which_putnbr(int n, char flag);
 int		ft_putnbr(int n);
 int		ft_putunbr(unsigned int n);
 int		ptrprint(void *ptr);
-int		hexaprint(int n, char flag);
+int		which_hexa(int n, char flag);
+int		hexaprint_maj(int n);
+int		hexaprint_min(int n);
 
 #endif
