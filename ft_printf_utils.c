@@ -6,12 +6,23 @@
 /*   By: rmonney <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:56:08 by rmonney           #+#    #+#             */
-/*   Updated: 2021/11/09 13:24:53 by rmonney          ###   ########.fr       */
+/*   Updated: 2021/11/10 13:40:53 by rmonney          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "printf.h"
 
-void	ft_putstr(char *s)
+int	ft_putchar(char c)
+{
+	if (c)
+	{
+		write(1, &c, 1);
+		return (1);
+	}
+	else
+		return (0);
+}
+
+int	ft_putstr(char *s)
 {
 	int	i;
 
@@ -23,27 +34,35 @@ void	ft_putstr(char *s)
 			write(1, &s[i], 1);
 			i ++;
 		}
+		return (i - 1);
 	}
+	else
+		return (0);
 }
 
-void	ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
 	long	nb;
+	int		count;
 
+	count = 0;
 	nb = n;
 	if (nb < 0)
 	{
 		write(1, &"-", 1);
+		count++;
 		nb *= -1;
 	}
 	if (nb > 9)
 	{
-		ft_putnbr_fd(nb / 10);
-		ft_putnbr_fd(nb % 10);
+		count += ft_putnbr(nb / 10);
+		count += ft_putnbr(nb % 10);
 	}
 	else
 	{
 		nb += 48;
 		write(1, &nb, 1);
+		count++;
 	}
+	return (count);
 }
