@@ -6,7 +6,7 @@
 /*   By: rmonney <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:57:35 by rmonney           #+#    #+#             */
-/*   Updated: 2021/11/10 18:44:27 by rmonney          ###   ########.fr       */
+/*   Updated: 2021/11/12 16:42:23 by rmonney          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_PRINTF_H
@@ -28,7 +28,6 @@ int		ft_putnbr(int n);
 int		ft_putunbr(unsigned int n);
 int		ptrprint(void *ptr);
 int		which_hexa(int n, char flag);
-int		hexaprint_maj(int n);
-int		hexaprint_min(int n);
+int		hexaprint(long n, char *base);
 
 #endif
